@@ -1,0 +1,5 @@
+- name: install apache
+  action: yum pkg="{{pkg}}" state=present
+  notify: 
+    - start
+    - deploy

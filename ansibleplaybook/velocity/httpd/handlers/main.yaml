@@ -1,0 +1,5 @@
+- name: start
+  action: service name="{{pkg}}" state=started
+
+- name: deploy
+  action: copy src=index.html dest="{{index_path}}"

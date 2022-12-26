@@ -1,0 +1,20 @@
+--- #multitarget
+ - hosts: devlinux
+   user: ansible
+   become: yes
+   connection: ssh
+   gather_facts: yes
+
+   tasks:
+     - name: install tree
+       action: yum pkg=tree  state=absent
+
+ - hosts: qalinux
+   user: ansible
+   become: yes
+   connection: ssh
+   gather_facts: yes
+
+   tasks:
+     - name: install git 
+       action: yum pkg=git state=present

@@ -1,0 +1,14 @@
+---
+- hosts: devlinux
+  user: ansible
+  become: yes
+  connection: ssh
+  gather_facts: yes
+
+  tasks:
+    - name: print
+      user: name="{{item}}" state=present
+      loop:
+        - "mahesh"
+        - "sunil"
+        - "sumit"
